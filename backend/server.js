@@ -17,7 +17,7 @@ connectDB();
 const app = express();
 
 // Middlewares
-app.use(cors({ origin: 'https://task-manager-zetw.onrender.com', credentials: true })); // Enable Cross-Origin requests
+app.use(cors({ origin: 'https://task-manager-1-od1t.onrender.com', credentials: true })); // Enable Cross-Origin requests
 app.use(express.json()); // Parse JSON body
 app.use(express.urlencoded({ extended: true })); // Parse form data
 app.use('/uploads', express.static(path.join(__dirname, 'uploads'))); // Serve uploaded files
