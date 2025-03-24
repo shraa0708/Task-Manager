@@ -24,6 +24,7 @@ app.use('/uploads', express.static(path.join(__dirname, 'uploads'))); // Serve u
 
 //  API Routes
 app.use('/api/auth', authRoutes);
+app.use('/tasks', taskRoutes);
 app.get('/tasks', (req, res) => {
   // Respond with tasks data or a success message
   res.send('This is the tasks endpoint.'); // Example response
