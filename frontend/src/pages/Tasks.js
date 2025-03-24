@@ -21,7 +21,7 @@ const Tasks = () => {
         setError('');
         try {
             const token = localStorage.getItem('token');
-            const response = await axios.get('https://task-manager-zetw.onrender.comapi/tasks', {
+            const response = await axios.get('https://task-manager-zetw.onrender.com/api/tasks', {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 },
