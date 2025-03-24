@@ -21,7 +21,7 @@ const Tasks = () => {
         setError('');
         try {
             const token = localStorage.getItem('token');
-            const response = await axios.get('http://localhost:5000/api/tasks', {
+            const response = await axios.get('https://task-manager-zetw.onrender.comapi/tasks', {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 },
@@ -53,7 +53,7 @@ const Tasks = () => {
             formData.append('priority', priority);
             if (file) formData.append('file', file);
 
-            const res = await axios.post('http://localhost:5000/api/tasks', formData, {
+            const res = await axios.post('https://task-manager-zetw.onrender.com/api/tasks', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                     Authorization: `Bearer ${localStorage.getItem('token')}`,
@@ -71,7 +71,7 @@ const Tasks = () => {
     const handleDelete = async (id) => {
         try {
             const token = localStorage.getItem('token');
-            const res = await axios.delete(`http://localhost:5000/api/tasks/${id}`, {
+            const res = await axios.delete(`https://task-manager-zetw.onrender.com/api/tasks/${id}`, {
                 headers: { Authorization: `Bearer ${token}` },
             });
             console.log('Deleted Task:', res.data);
@@ -87,7 +87,7 @@ const Tasks = () => {
         try {
             const token = localStorage.getItem('token');
             const res = await axios.put(
-                `http://localhost:5000/api/tasks/${id}`,
+                `https://task-manager-zetw.onrender.com/api/tasks/${id}`,
                 { completed: true },
                 { headers: { Authorization: `Bearer ${token}` } }
             );
@@ -102,7 +102,7 @@ const Tasks = () => {
 
     const handleLogout = async () => {
         try {
-            await axios.post('http://localhost:5000/api/auth/logout', {}, { withCredentials: true });
+            await axios.post('https://task-manager-zetw.onrender.com/api/auth/logout', {}, { withCredentials: true });
             navigate('/');
         } catch (err) {
             console.error('Logout Error:', err);
