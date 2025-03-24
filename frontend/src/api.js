@@ -6,6 +6,8 @@ const api = axios.create({
 });
 axios.defaults.withCredentials = true;
 axios.get('https://task-manager-zetw.onrender.com/api/tasks', { withCredentials: true });
+axios.post('https://task-manager-zetw.onrender.com/api/tasks', {withCredentials: true});
+
 
 
 export default api;
